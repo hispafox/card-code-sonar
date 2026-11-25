@@ -1,0 +1,1 @@
+-DPIN_LONGITUD_MAXIMA=12u -Wl,--wrap=seguridad_borrar

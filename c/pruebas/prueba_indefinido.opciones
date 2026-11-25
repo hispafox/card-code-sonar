@@ -1,0 +1,1 @@
+-fsanitize=undefined -fsanitize-undefined-trap-on-error

@@ -1,0 +1,1 @@
+-fno-builtin -Wl,--wrap=memcpy -Wl,--wrap=seguridad_borrar
