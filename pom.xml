@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Este fichero está solo para que el análisis automático de SonarQube Cloud
+  encuentre el applet: ese análisis no mira el código Java de un repositorio
+  sin Maven ni Gradle. El repositorio no se compila con Maven; se compila y se
+  prueba con los scripts de PowerShell, como el repositorio de ejemplo.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cardcode</groupId>
+  <artifactId>card-code-sonar</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>8</maven.compiler.release>
+  </properties>
+
+  <dependencies>
+    <!-- La API de Java Card 3.0.5 viene dentro de jcardsim, la misma versión que hay en lib/. -->
+    <dependency>
+      <groupId>com.klinec</groupId>
+      <artifactId>jcardsim</artifactId>
+      <version>3.0.6.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>javacard/src</sourceDirectory>
+    <testSourceDirectory>javacard/pruebas</testSourceDirectory>
+  </build>
+</project>

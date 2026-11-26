@@ -17,4 +17,4 @@ El código redundante a propósito del submódulo 3.5 (la comprobación doble de
 
 ## El análisis
 
-`.sonarcloud.properties` dice qué carpetas son código y cuáles son pruebas. El código C del módulo heredado (`liquidacion.c`) se compila sin `-Wconversion`, como en el repositorio de ejemplo.
+`.sonarcloud.properties` dice qué carpetas son código y cuáles son pruebas. `pom.xml` está solo para que el análisis automático encuentre el applet, porque ese análisis no mira el código Java de un repositorio sin Maven ni Gradle; el repositorio no se compila con Maven. El código C del módulo heredado (`liquidacion.c`) se compila sin `-Wconversion`, como en el repositorio de ejemplo.
