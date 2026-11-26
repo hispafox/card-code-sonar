@@ -10,11 +10,11 @@ El código del repositorio de ejemplo del curso, en una sola versión y en una s
 | `c/src/liquidacion.c` | El módulo heredado, sin refactorizar | El antes del submódulo 5.2 |
 | `c/src/extracto.c` | El extracto de los movimientos, ya refactorizado | El después del submódulo 5.1 |
 | `c/pruebas` | Las pruebas de C, con Unity (`terceros/unity`) | Las mismas ramas |
-| `javacard/src` | El applet de Java Card | El después del submódulo 4.5 |
+| `javacard/src/main/java` | El applet de Java Card | El después del submódulo 4.5 |
 | `javacard/pruebas` | Las pruebas del applet, en Groovy con Spock, sobre jcardsim (`lib/`) | El después del submódulo 5.3 |
 
 El código redundante a propósito del submódulo 3.5 (la comprobación doble del PIN, la comparación en tiempo constante, la barrera del optimizador y el borrado seguro) está tal cual, con sus comentarios `CONTRAMEDIDA`.
 
 ## El análisis
 
-`.sonarcloud.properties` dice qué carpetas son código y cuáles son pruebas. `pom.xml` está solo para que el análisis automático encuentre el applet, porque ese análisis no mira el código Java de un repositorio sin Maven ni Gradle; el repositorio no se compila con Maven. El código C del módulo heredado (`liquidacion.c`) se compila sin `-Wconversion`, como en el repositorio de ejemplo.
+`.sonarcloud.properties` dice qué carpetas son código y cuáles son pruebas. `pom.xml` está solo para que el análisis automático encuentre el applet, porque ese análisis no mira el código Java de un repositorio sin Maven ni Gradle; el repositorio no se compila con Maven. Por lo mismo, el applet está en `javacard/src/main/java`, la carpeta de Maven, y no en `javacard/src` como en el repositorio de ejemplo: el análisis automático no busca Java en otra parte. El código C del módulo heredado (`liquidacion.c`) se compila sin `-Wconversion`, como en el repositorio de ejemplo.

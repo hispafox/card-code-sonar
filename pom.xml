@@ -31,7 +31,7 @@
   </dependencies>
 
   <build>
-    <sourceDirectory>javacard/src</sourceDirectory>
+    <sourceDirectory>javacard/src/main/java</sourceDirectory>
     <testSourceDirectory>javacard/pruebas</testSourceDirectory>
   </build>
 </project>
